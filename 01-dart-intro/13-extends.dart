@@ -27,6 +27,8 @@ abstract class EnergyPlant {
   void consumeEnergy(double energy);
 }
 
+// Al extender una interfaz es como heredar de una clase abstracta
+// La difrencia entre implementar es que el extender lleva todas las propiedades y metodos de la clase abstracta
 class WindPlant extends EnergyPlant {
   WindPlant({required double initialEnergy})
       : super(
