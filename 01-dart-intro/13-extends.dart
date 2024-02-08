@@ -1,4 +1,17 @@
-void main() {}
+void main() {
+  final windPlant = WindPlant(initialEnergy: 100);
+  final solarPlant = SolarPlant(initialEnergy: 50);
+
+  print('Wind: ${chargerPhone(windPlant)}');
+  print('Solar: ${chargerPhone(solarPlant)}');
+}
+
+double chargerPhone(EnergyPlant plant) {
+  if (plant.energyLeft < 10) {
+    throw Exception('Not enough energy');
+  }
+  return plant.energyLeft -= 10;
+}
 
 enum PlantType { wind, solar, hydro }
 
@@ -15,14 +28,26 @@ abstract class EnergyPlant {
 }
 
 class WindPlant extends EnergyPlant {
-  WindPlant({required double energyLeft})
+  WindPlant({required double initialEnergy})
       : super(
-          energyLeft: energyLeft,
+          energyLeft: initialEnergy,
           type: PlantType.wind,
         );
 
   @override
   void consumeEnergy(double energy) {
     energyLeft -= energy;
+  }
+}
+
+class SolarPlant extends EnergyPlant {
+  SolarPlant({required double initialEnergy})
+      : super(
+          energyLeft: initialEnergy,
+          type: PlantType.solar,
+        );
+  @override
+  void consumeEnergy(double energy) {
+    energyLeft -= energy * 2;
   }
 }
