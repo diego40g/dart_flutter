@@ -14,3 +14,8 @@ Future<String> httpGet(String url) {
     //return 'Delayed response from server';
   });
 }
+// The future is a value that will be available at some point in the future. 
+// It is a placeholder for a value that will be available at some point in the future.
+// Init of program
+// Ending of program
+// Error: Error in server
