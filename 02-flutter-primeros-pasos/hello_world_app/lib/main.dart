@@ -10,9 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp( // Add const because the widget is immutable not dinamic
+    return MaterialApp( // Add const because the widget is immutable not dinamic
       debugShowCheckedModeBanner: false,
-      home: CounterScreen()
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.red
+      ),
+      home: const CounterScreen()
     );
   }
 }

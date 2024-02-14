@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});
 
+  final int clicCounter = 0;
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Counter Screen'),
+      ),
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -15,7 +20,7 @@ class CounterScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: const FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.plus_one),
       ),
