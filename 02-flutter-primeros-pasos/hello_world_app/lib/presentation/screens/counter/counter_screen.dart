@@ -10,10 +10,14 @@ class CounterScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Counter Screen 1'),
-            Text('Counter Screen 2'),
+            Text('10',style: TextStyle(fontSize: 160, fontWeight: FontWeight.w100),),
+            Text('clicks', style: TextStyle(fontSize: 25),),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: null,
+        child: Icon(Icons.plus_one),
       ),
     );
   }
