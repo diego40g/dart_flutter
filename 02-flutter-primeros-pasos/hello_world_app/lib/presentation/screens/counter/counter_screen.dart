@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});
 
-  final int clicCounter = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
