@@ -21,7 +21,8 @@ class _CounterScreenState extends State<CounterScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('$clicCounter',style: const TextStyle(fontSize: 160, fontWeight: FontWeight.w100),),
-            const Text('clicks', style: TextStyle(fontSize: 25),),
+            //Text(clicCounter == 1 ? 'click' : 'clicks', style: const TextStyle(fontSize: 25),),
+            Text('Clic${clicCounter == 1 ? '' : 's'}', style: const TextStyle(fontSize: 25),),
           ],
         ),
       ),
