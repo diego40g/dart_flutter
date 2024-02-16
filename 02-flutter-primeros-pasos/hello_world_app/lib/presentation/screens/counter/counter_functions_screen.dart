@@ -48,6 +48,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            shape: const StadiumBorder(),
             onPressed: () {
               setState(() {
                 clicCounter++;
@@ -55,13 +56,20 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
             },
             child: const Icon(Icons.plus_one),
           ),
+          const SizedBox(
+            height: 10,
+          ),
           FloatingActionButton(
+            shape: const StadiumBorder(),
             onPressed: () {
               setState(() {
                 clicCounter= 0;
               });
             },
             child: const Icon(Icons.refresh_rounded),
+          ),
+          const SizedBox(
+            height: 10,
           ),
           FloatingActionButton(
             onPressed: () {
