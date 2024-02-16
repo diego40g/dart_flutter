@@ -47,39 +47,62 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            shape: const StadiumBorder(),
+          CustomButton(
+            icon:Icons.plus_one,
             onPressed: () {
               setState(() {
                 clicCounter++;
               });
             },
-            child: const Icon(Icons.plus_one),
           ),
+          
           const SizedBox(
             height: 10,
           ),
-          FloatingActionButton(
-            shape: const StadiumBorder(),
+          
+          CustomButton(
+            icon:Icons.refresh_rounded,
             onPressed: () {
+              clicCounter=0;
               setState(() {
-                clicCounter= 0;
               });
             },
-            child: const Icon(Icons.refresh_rounded),
           ),
+          
           const SizedBox(
             height: 10,
           ),
-          FloatingActionButton(
+          CustomButton(
+            icon: Icons.exposure_minus_1_outlined,
             onPressed: () {
+              if(clicCounter == 0) return;
               setState(() {
                 clicCounter--;
               });
             },
-            child: const Icon(Icons.exposure_minus_1),
           ),
         ],)
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+
+  final IconData icon;
+  final VoidCallback? onPressed;
+
+  const CustomButton({
+    super.key, 
+    required this.icon, 
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: const StadiumBorder(),
+      onPressed: onPressed,
+      child: Icon(icon),
     );
   }
 }
