@@ -24,7 +24,7 @@ class AppTheme {
       useMaterial3: true,
       colorSchemeSeed: _colorTheme[selectedColor],
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      brightness: Brightness.dark, // Change to light to see the difference
+      //brightness: Brightness.dark, //Change to light to see the difference
     );
   }
 }
